@@ -478,21 +478,23 @@
   #expertise { background: var(--marble); }
 
   .expertise-grid {
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5px;
-    margin-top: 2.5rem;
-    background: var(--marble-dk);
-    border: 1.5px solid var(--marble-dk);
-  }
+  display: flex;              /* was: display: grid; */
+  flex-wrap: wrap;            /* new */
+  justify-content: center;    /* new */
+  gap: 1.5px;
+  margin-top: 2.5rem;
+  background: var(--marble-dk);
+  border: 1.5px solid var(--marble-dk);
+}
   
   .expertise-card {
-    background: var(--white);
-    padding: 1.8rem;
-    position: relative;
-    transition: background 0.2s;
-  }
+  background: var(--white);
+  padding: 1.8rem;
+  position: relative;
+  transition: background 0.2s;
+  flex: 0 1 280px;    /* new */
+  max-width: 340px;   /* new */
+}
 
   .expertise-card:hover { background: var(--marble); }
 
@@ -885,7 +887,7 @@
     .mentor-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     section { padding: 60px 5vw; }
-    .expertise-grid { grid-template-columns: 1fr; }
+    .expertise-card { flex: 1 1 100%; max-width: 100%; }
   }
 
   /* scroll fade-in for sections */
@@ -997,7 +999,7 @@
     <p class="hero-designation"> Corporate Governance Professional &nbsp;·&nbsp; POSCO & POSH Trainer &nbsp;·&nbsp; Independent Director &nbsp;·&nbsp; Mentor</p>
     <p class="hero-tagline">
       <em>Governance. Leadership. Professional Excellence.</em><br>
-      19 years of experience strengthening compliance, corporate law and governance across diverse industries.
+      19 years of experience (PQE 10yrs) strengthening compliance, corporate law and governance across diverse industries.
     </p>
     <div class="hero-actions">
       <a href="#about" class="btn-primary">Professional Journey</a>
@@ -1047,7 +1049,7 @@
           <span class="cred-pill">M.Com.</span>
           <span class="cred-pill">CA Intermediate</span>
           <span class="cred-pill">IICA — Independent Directors Examination</span>
-          <span class="cred-pill">POSH &amp; POSCO Trainer</span>
+          <span class="cred-pill">POSH &amp; POCSO Trainer</span>
         </div>
       </div>
 
@@ -1086,7 +1088,7 @@
         <div class="expertise-desc">Board processes, governance frameworks, regulatory compliance and shareholder processes under the Companies Act, 2013.</div>
       </div>
       <div class="expertise-card">
-        <div class="expertise-title">Certified POCSO &amp; POSH Trainer</div>
+        <div class="expertise-title">Certified POSH &amp; POCSO Trainer</div>
         <div class="expertise-desc">Certified trainer for POSH and POCSO compliance, conducting workplace sensitisation programmes and awareness sessions on prevention of sexual harassment and child protection laws.</div>
       </div>
       <div class="expertise-card">
@@ -1129,9 +1131,18 @@
     <div class="gold-rule reveal"></div>
     <p class="section-body reveal" style="color:rgba(255,255,255,0.65)">
       CS Chandan Gupta has been deeply involved in the professional activities of ICSI, serving in several leadership and committee positions at the Hooghly Chapter and the Eastern India Regional Council.
-    </p>
-
+    </p>    
+    
     <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2026</div>
+        <ul class="timeline-roles">
+          <li>Core Committee Member, Hooghly Chapter</li>
+          <li>Editorial Board Member, Hooghly Chapter</li>
+          <li>Chairman, Student Felicitation Committee</li>
+          <li>Chairman, Professional Development Committee</li>          
+        </ul>
+      </div>      
       <div class="timeline-item reveal">
         <div class="timeline-year">2025</div>
         <ul class="timeline-roles">
@@ -1155,17 +1166,7 @@
           <li>Committee Member, Company Secretaries Benevolent Fund (CSBF), Hooghly Chapter</li>
         </ul>
       </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-year">Ongoing</div>
-        <ul class="timeline-roles">
-          <li>Core Committee Member, Hooghly Chapter</li>
-          <li>Editorial Board Member, Hooghly Chapter</li>
-          <li>Chairman, Student Felicitation Committee</li>
-          <li>Chairman, Professional Development Committee</li>
-          <li>First Convenor, Debating Society</li>
-          <li>General Observer, ICSI — multiple years</li>
-        </ul>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -1282,28 +1283,28 @@
           <div class="contact-icon">📍</div>
           <div class="contact-detail">
             <strong>Location</strong>
-            Kolkata / West Bengal, India
+            Howrah / West Bengal, India
           </div>
         </div>
         <div class="contact-item reveal">
-          <div class="contact-icon">💼</div>
+          <div class="contact-icon">📞 </div>
           <div class="contact-detail">
-            <strong>Current Role</strong>
-            Group Company Secretary, Asian Group
+            <strong>Call</strong>
+            <a href="wa.me/918017171763/" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">+91 80-171717-63</a>
           </div>
         </div>
         <div class="contact-item reveal">
           <div class="contact-icon">🔗</div>
           <div class="contact-detail">
             <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/acschandangupta/" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">linkedin.com/in/acschandangupta</a>
+            <a href="https://www.linkedin.com/in/acschandangupta/" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">@acschandangupta</a>
           </div>
         </div>
         <div class="contact-item reveal">
           <div class="contact-icon">✉</div>
           <div class="contact-detail">
             <strong>Email</strong>
-            [To be provided]
+            <a href="mailto:acschandangupta@gmail.com" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">acschandangupta@gmail.com</a>
           </div>
         </div>
       </div>
