@@ -478,14 +478,15 @@
   #expertise { background: var(--marble); }
 
   .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5px;
     margin-top: 2.5rem;
     background: var(--marble-dk);
     border: 1.5px solid var(--marble-dk);
   }
-
+  
   .expertise-card {
     background: var(--white);
     padding: 1.8rem;
@@ -821,7 +822,7 @@
     #home {
       display: flex;
       flex-direction: column;
-      padding-top: 0;
+      padding-top: calc(60px + env(safe-area-inset-top, 0px));
       padding-bottom: 40px;
     }
     /* .hero-inner is first in the HTML but the photo should render
@@ -993,7 +994,7 @@
   <div class="hero-inner">
     <p class="hero-eyebrow">Fellow Member, ICSI &nbsp;·&nbsp; FCS</p>
     <h1 class="hero-name">CS Chandan Gupta</h1>
-    <p class="hero-designation">Group Company Secretary &nbsp;·&nbsp; Corporate Governance Professional &nbsp;·&nbsp; Independent Director &nbsp;·&nbsp; Mentor</p>
+    <p class="hero-designation"> Corporate Governance Professional &nbsp;·&nbsp; POSCO & POSH Trainer &nbsp;·&nbsp; Independent Director &nbsp;·&nbsp; Mentor</p>
     <p class="hero-tagline">
       <em>Governance. Leadership. Professional Excellence.</em><br>
       19 years of experience strengthening compliance, corporate law and governance across diverse industries.
@@ -1083,6 +1084,10 @@
       <div class="expertise-card">
         <div class="expertise-title">Corporate Governance</div>
         <div class="expertise-desc">Board processes, governance frameworks, regulatory compliance and shareholder processes under the Companies Act, 2013.</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-title">Certified POCSO &amp; POSH Trainer</div>
+        <div class="expertise-desc">Certified trainer for POSH and POCSO compliance, conducting workplace sensitisation programmes and awareness sessions on prevention of sexual harassment and child protection laws.</div>
       </div>
       <div class="expertise-card">
         <div class="expertise-title">SEBI &amp; Listed Company Compliance</div>
