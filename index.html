@@ -1304,7 +1304,7 @@
           <div class="contact-icon">📩</div>
           <div class="contact-detail">
             <strong>Email</strong>
-            <a href="mailto:acschandangupta@gmail.com" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">acschandangupta@gmail.com</a>
+            <a href="mailto:fcschandangupta@gmail.com" target="_blank" rel="noopener" style="color:var(--gold-lt);text-decoration:none;">fcschandangupta@gmail.com</a>
           </div>
         </div>
       </div>
@@ -1313,21 +1313,21 @@
         <div class="contact-form reveal">
           <div class="form-field">
             <label>Your Name</label>
-            <input type="text" placeholder="Full name">
+            <input type="text" id="contactName" placeholder="Full name">
           </div>
           <div class="form-field">
             <label>Email Address</label>
-            <input type="email" placeholder="your@email.com">
+            <input type="email" id="contactEmail" placeholder="your@email.com">
           </div>
           <div class="form-field">
             <label>Subject</label>
-            <input type="text" placeholder="Speaking engagement / mentoring / governance discussion">
+            <input type="text" id="contactSubject" placeholder="Speaking engagement / mentoring / governance discussion">
           </div>
           <div class="form-field">
             <label>Message</label>
-            <textarea rows="4" placeholder="Your message..."></textarea>
+            <textarea id="contactMessage" rows="4" placeholder="Your message..."></textarea>
           </div>
-          <button class="btn-primary" style="align-self:flex-start;margin-top:0.5rem" onclick="alert('Contact form — connect your backend or Formspree.')">Send Message</button>
+          <button class="btn-primary" style="align-self:flex-start;margin-top:0.5rem" onclick="sendEmail()">Send Message</button>
         </div>
       </div>
     </div>
@@ -1359,6 +1359,24 @@
 </footer>
 
 <script>
+
+  function sendEmail() {
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subjectInput = document.getElementById('contactSubject').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    const subject = subjectInput ? subjectInput : 'Website Contact Form Inquiry';
+    
+    const bodyLines = [];
+    if (name) bodyLines.push(`Name: ${name}`);
+    if (email) bodyLines.push(`Email: ${email}`);
+    if (message) bodyLines.push(`\nMessage:\n${message}`);
+
+    const mailtoUrl = `mailto:acschandangupta@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+    window.location.href = mailtoUrl;
+  }
   // Nav scroll state — navy by default, marble grey when scrolled past hero
   const navEl = document.querySelector('nav');
   const heroSection = document.getElementById('home');
@@ -1463,6 +1481,7 @@
     };
     preloader.src = src;
   });
+  
 </script>
 </body>
 </html>
